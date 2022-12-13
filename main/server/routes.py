@@ -23,6 +23,11 @@ from .server import app
 # passar como parâmetro a URL da rota:
 
 
+
+
+
+# * JEITO 0 *
+
 app = Flask(__name__)
 
 ANIMAL_FOODS = {
@@ -52,111 +57,3 @@ if __name__ == '__main__':
     app.run()
 
 
-
-#####
-# * JEITO 1 *
-
-# animals = {
-#     "gorila": {
-#         "nome": "Gorila",
-#         "idade": 10,
-#         "comida_preferida": "banana"
-#     },
-#     "leao": {
-#         "nome": "Leão",
-#         "idade": 8,
-#         "comida_preferida": "carne"
-#     },
-#     "cavalo": {
-#         "nome": "Cavalo",
-#         "idade": 5,
-#         "comida_preferida": "feno"
-#     },
-#     "girafa": {
-#         "nome": "Girafa",
-#         "idade": 12,
-#         "comida_preferida": "folhas"
-#     }
-# }
-
-# @app.route("/animal/gorila", methods=["POST"])
-# def gorila():
-#     # Obter informação de comida do corpo da requisição
-#     comida = request.json["comida"]
-#     if comida == "banana":
-#         return "Comida de preferência do gorila!"
-#     else:
-#         return "Comida não é de preferência do gorila."
-
-# @app.route("/animal/leao", methods=["POST"])
-# def leao():
-#     # Obter informação de comida do corpo da requisição
-#     comida = request.json["comida"]
-#     if comida == "carne":
-#         return "Comida de preferência do leão!"
-#     else:
-#         return "Comida não é de preferência do leão."
-
-# @app.route("/animal/cavalo", methods=["POST"])
-# def cavalo():
-#     # Obter informação de comida do corpo da requisição
-#     comida = request.json["comida"]
-#     if comida == "feno":
-#         return "Comida de preferência do cavalo!"
-#     else:
-#         return "Comida não é de preferência do cavalo."
-
-# @app.route("/animal/girafa", methods=["POST"])
-# def girafa():
-#     # Obter informação de comida do corpo da requisição
-#     comida = request.json["comida"]
-#     if comida == "carne":
-#         return "Comida de preferência da girafa!"
-#     else:
-#         return "Comida não é de preferência da girafa."
-
-########
-
-
-
-
-# * JEITO 2 *
-# animals = {
-#     'gorila': {
-#         'nome': 'Gorila',
-#         'idade': 10,
-#         'comida_preferida': 'banana'
-#     },
-#     'leão': {
-#         'nome': 'Leão',
-#         'idade': 5,
-#         'comida_preferida': 'carne'
-#     },
-#     'cavalo': {
-#         'nome': 'Cavalo',
-#         'idade': 7,
-#         'comida_preferida': 'feno'
-#     },
-#     'girafa': {
-#         'nome': 'Girafa',
-#         'idade': 8,
-#         'comida_preferida': 'folhas'
-#     }
-# }
-
-# @app.route('/animal/<animal_name>', methods=['POST'])
-# def verificar_comida_preferida(animal_name):
-#     animal = animals.get(animal_name)
-#     if not animal:
-#         return 'Animal não encontrado', 404
-
-#     comida = request.json.get('comida')
-#     if not comida:
-#         return 'Comida não informada', 400
-
-#     if comida == animal['comida_preferida']:
-#         return 'Comida de preferência', 200
-#     else:
-#         return 'Comida não é de preferência', 400
-
-####
